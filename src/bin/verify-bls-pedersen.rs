@@ -11,5 +11,6 @@ fn main() {
     for (m, sig) in ms.iter().zip(sigs.iter()) {
         verify(pk, m, *sig);
     }
+
     forge_and_verify_for_username(b"Aryaethn");
 }
