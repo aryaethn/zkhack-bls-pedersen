@@ -2,6 +2,7 @@ use bls_pedersen::bls::verify;
 use bls_pedersen::data::puzzle_data;
 use bls_pedersen::PUZZLE_DESCRIPTION;
 use prompt::{puzzle, welcome};
+use bls_pedersen::forge::forge_and_verify_for_username;
 
 fn main() {
     welcome();
@@ -10,11 +11,5 @@ fn main() {
     for (m, sig) in ms.iter().zip(sigs.iter()) {
         verify(pk, m, *sig);
     }
-
-    /* Your solution here! */
-    /*
-      let sig = ...;
-      let m = your username;
-      verify(pk, m, sig);
-    */
+    forge_and_verify_for_username(b"Aryaethn");
 }
